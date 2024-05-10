@@ -7,14 +7,6 @@
       "type": "datasource",
       "pluginId": "loki",
       "pluginName": "Loki"
-    },
-    {
-      "name": "DS_PROMETHEUS",
-      "label": "prometheus",
-      "description": "",
-      "type": "datasource",
-      "pluginId": "prometheus",
-      "pluginName": "Prometheus"
     }
   ],
   "__elements": {},
@@ -35,12 +27,6 @@
       "type": "datasource",
       "id": "loki",
       "name": "Loki",
-      "version": "1.0.0"
-    },
-    {
-      "type": "datasource",
-      "id": "prometheus",
-      "name": "Prometheus",
       "version": "1.0.0"
     },
     {
@@ -161,7 +147,6 @@
           },
           "editorMode": "code",
           "expr": "sum(count_over_time({instance=\"$host\"} | json | request_method=\"GET\" [5m]))",
-          "legendFormat": "GET",
           "queryType": "range",
           "refId": "A"
         },
@@ -172,7 +157,7 @@
           },
           "editorMode": "code",
           "expr": "sum(count_over_time({instance=\"$host\"} | json | request_method=\"POST\" [5m]))",
-          "legendFormat": "POST",
+          "hide": false,
           "queryType": "range",
           "refId": "B"
         },
@@ -183,7 +168,7 @@
           },
           "editorMode": "code",
           "expr": "sum(count_over_time({instance=\"$host\"} | json | request_method!~\"GET|POST\" [5m]))",
-          "legendFormat": "OTHERS",
+          "hide": false,
           "queryType": "range",
           "refId": "C"
         }
@@ -552,10 +537,10 @@
       {
         "current": {},
         "datasource": {
-          "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
+          "type": "loki",
+          "uid": "${DS_LOKI}"
         },
-        "definition": "label_values(node_uname_info{job=\"system-monitoring\"},instance)",
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": "host",
@@ -563,15 +548,34 @@
         "name": "host",
         "options": [],
         "query": {
-          "qryType": 1,
-          "query": "label_values(node_uname_info{job=\"system-monitoring\"},instance)",
-          "refId": "PrometheusVariableQueryEditor-VariableQuery"
+          "label": "instance",
+          "refId": "LokiVariableQueryEditor-VariableQuery",
+          "stream": "",
+          "type": 1
         },
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
         "sort": 0,
         "type": "query"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "loki",
+          "value": "fdl2kjrq4euwwf"
+        },
+        "hide": 0,
+        "includeAll": false,
+        "label": "Data Source",
+        "multi": false,
+        "name": "ds",
+        "options": [],
+        "query": "loki",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "type": "datasource"
       }
     ]
   },
@@ -583,6 +587,6 @@
   "timezone": "browser",
   "title": "Nginx Logs Loki",
   "uid": "bdl2egwfe3da8b",
-  "version": 13,
+  "version": 14,
   "weekStart": ""
 }
