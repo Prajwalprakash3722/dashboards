@@ -1,61 +1,4 @@
 {
-  "__inputs": [
-    {
-      "name": "DS_PROMETHEUS",
-      "label": "prometheus",
-      "description": "",
-      "type": "datasource",
-      "pluginId": "prometheus",
-      "pluginName": "Prometheus"
-    },
-    {
-      "name": "DS_LOKI",
-      "label": "loki",
-      "description": "",
-      "type": "datasource",
-      "pluginId": "loki",
-      "pluginName": "Loki"
-    }
-  ],
-  "__elements": {},
-  "__requires": [
-    {
-      "type": "panel",
-      "id": "bargauge",
-      "name": "Bar gauge",
-      "version": ""
-    },
-    {
-      "type": "grafana",
-      "id": "grafana",
-      "name": "Grafana",
-      "version": "10.4.2"
-    },
-    {
-      "type": "datasource",
-      "id": "loki",
-      "name": "Loki",
-      "version": "1.0.0"
-    },
-    {
-      "type": "datasource",
-      "id": "prometheus",
-      "name": "Prometheus",
-      "version": "1.0.0"
-    },
-    {
-      "type": "panel",
-      "id": "stat",
-      "name": "Stat",
-      "version": ""
-    },
-    {
-      "type": "panel",
-      "id": "timeseries",
-      "name": "Time series",
-      "version": ""
-    }
-  ],
   "annotations": {
     "list": [
       {
@@ -77,7 +20,7 @@
   "fiscalYearStartMonth": 0,
   "gnetId": 14900,
   "graphTooltip": 0,
-  "id": null,
+  "id": 2,
   "links": [],
   "panels": [
     {
@@ -109,7 +52,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "adlv3vkcizjlsc"
       },
       "description": "The total number of accepted connections from clients since the nginx master process started. Note that reloading configurations or restarting worker processes will not reset this metric. If you terminate and restart the master process, you will reset the metric.\n\n",
       "fieldConfig": {
@@ -218,6 +161,7 @@
           "showLegend": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "multi",
           "sort": "none"
         }
@@ -227,7 +171,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "adlv3vkcizjlsc"
           },
           "editorMode": "code",
           "expr": "nginx_connections_accepted{instance=\"$host\"}",
@@ -243,7 +187,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "adlv3vkcizjlsc"
       },
       "description": "The current number of active (accepted) connections from clients. Includes all connections with the statuses Idle / Waiting, Reading, and Writing.",
       "fieldConfig": {
@@ -290,12 +234,12 @@
         "sizing": "auto",
         "valueMode": "color"
       },
-      "pluginVersion": "10.4.2",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "adlv3vkcizjlsc"
           },
           "editorMode": "code",
           "expr": "nginx_connections_accepted{instance=\"$host\"}",
@@ -311,7 +255,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "adlv3vkcizjlsc"
       },
       "description": "The current number of connections from clients that are in the Idle / Waiting state.",
       "fieldConfig": {
@@ -356,12 +300,12 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.4.2",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "adlv3vkcizjlsc"
           },
           "editorMode": "code",
           "expr": "nginx_connections_waiting{job=\"nginx-monitoring\", instance=\"$host\"}",
@@ -377,7 +321,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "adlv3vkcizjlsc"
       },
       "description": "The current number of (accepted) connections from clients where nginx is reading the request. Measured at the time the status module was queried.",
       "fieldConfig": {
@@ -422,12 +366,12 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.4.2",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "adlv3vkcizjlsc"
           },
           "editorMode": "code",
           "expr": "nginx_connections_reading{job=\"nginx-monitoring\", instance=\"$host\"}",
@@ -443,7 +387,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "adlv3vkcizjlsc"
       },
       "description": "The current number of connections from clients where nginx is writing a response back to the client.\n",
       "fieldConfig": {
@@ -484,12 +428,12 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.4.2",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "adlv3vkcizjlsc"
           },
           "editorMode": "code",
           "expr": "nginx_connections_writing{job=\"nginx-monitoring\", instance=\"$host\"}",
@@ -504,7 +448,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "adlv3vkcizjlsc"
       },
       "description": "The total number of handled connections from clients since the nginx master process started. This will be lower than accepted only in cases where a connection is dropped before it is handled.",
       "fieldConfig": {
@@ -613,6 +557,7 @@
           "showLegend": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "multi",
           "sort": "none"
         }
@@ -622,7 +567,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "adlv3vkcizjlsc"
           },
           "editorMode": "code",
           "expr": "nginx_connections_handled{job=\"nginx-monitoring\", instance=\"$host\"}",
@@ -638,7 +583,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "adlv3vkcizjlsc"
       },
       "description": "The total number of client requests since the nginx master process started. A request is an application-level (HTTP, etc.) event. It occurs when a client requests a resource via the application protocol. A single connection can (and often does) make many requests. So most of the time, there are more requests than accepted/handled connections.",
       "fieldConfig": {
@@ -747,6 +692,7 @@
           "showLegend": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "multi",
           "sort": "none"
         }
@@ -756,7 +702,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "adlv3vkcizjlsc"
           },
           "editorMode": "code",
           "expr": "nginx_http_requests_total{job=\"nginx-monitoring\", instance=\"$host\"}",
@@ -772,7 +718,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "adlv3vkcizjlsc"
       },
       "description": "",
       "fieldConfig": {
@@ -846,6 +792,7 @@
           "showLegend": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "multi",
           "sort": "none"
         }
@@ -855,7 +802,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "adlv3vkcizjlsc"
           },
           "editorMode": "code",
           "expr": "irate(nginx_connections_accepted{instance=~\"$host\"}[5m])",
@@ -871,7 +818,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "adlv3vkcizjlsc"
       },
       "fieldConfig": {
         "defaults": {
@@ -944,6 +891,7 @@
           "showLegend": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "multi",
           "sort": "none"
         }
@@ -953,7 +901,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "adlv3vkcizjlsc"
           },
           "editorMode": "code",
           "expr": "nginx_connections_active{instance=~\"$host\"}",
@@ -964,7 +912,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "adlv3vkcizjlsc"
           },
           "editorMode": "code",
           "expr": "nginx_connections_reading{instance=~\"$host\"}",
@@ -977,7 +925,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "adlv3vkcizjlsc"
           },
           "editorMode": "code",
           "expr": "nginx_connections_waiting{instance=~\"$host\"}",
@@ -990,7 +938,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "adlv3vkcizjlsc"
           },
           "editorMode": "code",
           "expr": "nginx_connections_writing{instance=~\"$host\"}",
@@ -1007,7 +955,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "adlv3vkcizjlsc"
       },
       "fieldConfig": {
         "defaults": {
@@ -1051,8 +999,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1088,7 +1035,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "adlv3vkcizjlsc"
           },
           "editorMode": "code",
           "expr": "irate(nginx_http_requests_total{instance=~\"$host\"}[$__interval])",
@@ -1130,7 +1077,7 @@
     {
       "datasource": {
         "type": "loki",
-        "uid": "${DS_LOKI}"
+        "uid": "edlv3vkyv2uwwa"
       },
       "description": "Requests with 200 Status Code",
       "fieldConfig": {
@@ -1175,8 +1122,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1211,7 +1157,7 @@
         {
           "datasource": {
             "type": "loki",
-            "uid": "${DS_LOKI}"
+            "uid": "edlv3vkyv2uwwa"
           },
           "editorMode": "code",
           "expr": "sum(count_over_time({instance=\"$host\"} | json | status=~\"2..\" [5m]))",
@@ -1225,7 +1171,7 @@
     {
       "datasource": {
         "type": "loki",
-        "uid": "${DS_LOKI}"
+        "uid": "edlv3vkyv2uwwa"
       },
       "description": "Requests with 4XX Status Code",
       "fieldConfig": {
@@ -1271,8 +1217,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1312,7 +1257,7 @@
         {
           "datasource": {
             "type": "loki",
-            "uid": "${DS_LOKI}"
+            "uid": "edlv3vkyv2uwwa"
           },
           "editorMode": "code",
           "expr": "sum(count_over_time({instance=\"$host\"} | json | status=~\"4..\" [5m]))",
@@ -1326,7 +1271,7 @@
     {
       "datasource": {
         "type": "loki",
-        "uid": "${DS_LOKI}"
+        "uid": "edlv3vkyv2uwwa"
       },
       "description": "Requests with 3XX Status Code",
       "fieldConfig": {
@@ -1372,8 +1317,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1413,7 +1357,7 @@
         {
           "datasource": {
             "type": "loki",
-            "uid": "${DS_LOKI}"
+            "uid": "edlv3vkyv2uwwa"
           },
           "editorMode": "code",
           "expr": "sum(count_over_time({instance=\"$host\"} | json | status=~\"3..\" [5m]))",
@@ -1427,7 +1371,7 @@
     {
       "datasource": {
         "type": "loki",
-        "uid": "${DS_LOKI}"
+        "uid": "edlv3vkyv2uwwa"
       },
       "description": "Requests with 5XX Status Code",
       "fieldConfig": {
@@ -1473,8 +1417,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1514,7 +1457,7 @@
         {
           "datasource": {
             "type": "loki",
-            "uid": "${DS_LOKI}"
+            "uid": "edlv3vkyv2uwwa"
           },
           "editorMode": "code",
           "expr": "sum(count_over_time({instance=\"$host\"} | json | status=~\"5..\" [5m]))",
@@ -1533,7 +1476,7 @@
     "list": [
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "node-1",
           "value": "node-1"
         },
@@ -1563,7 +1506,7 @@
         "current": {
           "selected": false,
           "text": "loki",
-          "value": "fdl2kjrq4euwwf"
+          "value": "edlv3vkyv2uwwa"
         },
         "hide": 0,
         "includeAll": false,
@@ -1582,7 +1525,7 @@
         "current": {
           "selected": false,
           "text": "prometheus",
-          "value": "ddl2kd0r4h14wa"
+          "value": "adlv3vkcizjlsc"
         },
         "hide": 0,
         "includeAll": false,
@@ -1603,6 +1546,7 @@
     "from": "now-5m",
     "to": "now"
   },
+  "timeRangeUpdatedDuringEditOrView": false,
   "timepicker": {
     "refresh_intervals": [
       "10s",
@@ -1619,6 +1563,6 @@
   "timezone": "",
   "title": "Nginx",
   "uid": "4DFTt9Wnk",
-  "version": 10,
+  "version": 4,
   "weekStart": ""
 }
