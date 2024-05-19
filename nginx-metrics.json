@@ -1056,8 +1056,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1181,8 +1180,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1278,8 +1276,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1380,8 +1377,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1482,8 +1478,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1542,32 +1537,29 @@
   "templating": {
     "list": [
       {
-        "current": {
-          "selected": true,
-          "text": "node-2",
-          "value": "node-2"
+        "current": {},
+        "datasource": {
+          "type": "loki",
+          "uid": "${DS_LOKI}"
         },
+        "definition": "",
         "hide": 0,
         "includeAll": false,
         "label": "instance",
         "multi": false,
         "name": "host",
-        "options": [
-          {
-            "selected": false,
-            "text": "node-1",
-            "value": "node-1"
-          },
-          {
-            "selected": true,
-            "text": "node-2",
-            "value": "node-2"
-          }
-        ],
-        "query": "node-1,node-2",
-        "queryValue": "",
+        "options": [],
+        "query": {
+          "label": "instance",
+          "refId": "LokiVariableQueryEditor-VariableQuery",
+          "stream": "",
+          "type": 1
+        },
+        "refresh": 1,
+        "regex": "",
         "skipUrlSync": false,
-        "type": "custom"
+        "sort": 0,
+        "type": "query"
       },
       {
         "current": {
@@ -1630,6 +1622,6 @@
   "timezone": "",
   "title": "Nginx",
   "uid": "4DFTt9Wnk",
-  "version": 3,
+  "version": 5,
   "weekStart": ""
 }
