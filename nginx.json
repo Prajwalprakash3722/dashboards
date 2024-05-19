@@ -15,7 +15,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "10.4.2"
+      "version": "11.0.0"
     },
     {
       "type": "panel",
@@ -135,6 +135,7 @@
           "showLegend": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "single",
           "sort": "none"
         }
@@ -146,7 +147,7 @@
             "uid": "${DS_LOKI}"
           },
           "editorMode": "code",
-          "expr": "sum(count_over_time({instance=\"$host\"} | json | request_method=\"GET\" [5m]))",
+          "expr": "sum(count_over_time({instance=\"$host\"} | json | request_method=\"GET\" | file=`/var/log/nginx/access.log` [5m]))",
           "queryType": "range",
           "refId": "A"
         },
@@ -156,7 +157,7 @@
             "uid": "${DS_LOKI}"
           },
           "editorMode": "code",
-          "expr": "sum(count_over_time({instance=\"$host\"} | json | request_method=\"POST\" [5m]))",
+          "expr": "sum(count_over_time({instance=\"$host\"} | json | request_method=\"POST\"  | file=`/var/log/nginx/access.log`[5m]))",
           "hide": false,
           "queryType": "range",
           "refId": "B"
@@ -167,7 +168,7 @@
             "uid": "${DS_LOKI}"
           },
           "editorMode": "code",
-          "expr": "sum(count_over_time({instance=\"$host\"} | json | request_method!~\"GET|POST\" [5m]))",
+          "expr": "sum(count_over_time({instance=\"$host\"} | json | request_method!~\"GET|POST\" | file=`/var/log/nginx/access.log` [5m]))",
           "hide": false,
           "queryType": "range",
           "refId": "C"
@@ -249,6 +250,7 @@
           "showLegend": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "single",
           "sort": "none"
         }
@@ -260,7 +262,7 @@
             "uid": "${DS_LOKI}"
           },
           "editorMode": "code",
-          "expr": "sum(count_over_time({instance=\"$host\"} | json | request_method=\"GET\" [5m]))",
+          "expr": "sum(count_over_time({instance=\"$host\"} | json | request_method=\"GET\" | file=`/var/log/nginx/access.log` [5m]))",
           "queryType": "range",
           "refId": "A"
         }
@@ -342,6 +344,7 @@
           "showLegend": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "single",
           "sort": "none"
         }
@@ -353,7 +356,7 @@
             "uid": "${DS_LOKI}"
           },
           "editorMode": "code",
-          "expr": "sum(count_over_time({instance=\"$host\"} | json | request_method=\"POST\" [5m]))",
+          "expr": "sum(count_over_time({instance=\"$host\"} | json | request_method=\"POST\"  | file=`/var/log/nginx/access.log` [5m]))",
           "queryType": "range",
           "refId": "A"
         }
@@ -435,6 +438,7 @@
           "showLegend": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "single",
           "sort": "none"
         }
@@ -446,7 +450,7 @@
             "uid": "${DS_LOKI}"
           },
           "editorMode": "code",
-          "expr": "sum(count_over_time({instance=\"$host\"} | json | request_method!~\"GET|POST\" [5m]))",
+          "expr": "sum(count_over_time({instance=\"$host\"} | json | request_method!~\"GET|POST\" | file=`/var/log/nginx/access.log` [5m]))",
           "queryType": "range",
           "refId": "A"
         }
@@ -563,15 +567,16 @@
         "current": {
           "selected": false,
           "text": "loki",
-          "value": "fdl2kjrq4euwwf"
+          "value": "ddm7frwis1k3ke"
         },
         "hide": 0,
         "includeAll": false,
         "label": "Data Source",
         "multi": false,
-        "name": "ds",
+        "name": "DS_LOKI",
         "options": [],
         "query": "loki",
+        "queryValue": "",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -583,10 +588,11 @@
     "from": "now-30m",
     "to": "now"
   },
+  "timeRangeUpdatedDuringEditOrView": false,
   "timepicker": {},
   "timezone": "browser",
   "title": "Nginx Logs Loki",
   "uid": "bdl2egwfe3da8b",
-  "version": 14,
+  "version": 3,
   "weekStart": ""
 }
