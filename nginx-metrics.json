@@ -29,7 +29,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "10.4.2"
+      "version": "11.0.0"
     },
     {
       "type": "datasource",
@@ -218,6 +218,7 @@
           "showLegend": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "multi",
           "sort": "none"
         }
@@ -290,7 +291,7 @@
         "sizing": "auto",
         "valueMode": "color"
       },
-      "pluginVersion": "10.4.2",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
@@ -356,7 +357,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.4.2",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
@@ -422,7 +423,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.4.2",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
@@ -484,7 +485,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "10.4.2",
+      "pluginVersion": "11.0.0",
       "targets": [
         {
           "datasource": {
@@ -613,6 +614,7 @@
           "showLegend": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "multi",
           "sort": "none"
         }
@@ -747,6 +749,7 @@
           "showLegend": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "multi",
           "sort": "none"
         }
@@ -846,6 +849,7 @@
           "showLegend": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "multi",
           "sort": "none"
         }
@@ -944,6 +948,7 @@
           "showLegend": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "multi",
           "sort": "none"
         }
@@ -1079,6 +1084,7 @@
           "showLegend": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "multi",
           "sort": "none"
         }
@@ -1202,6 +1208,7 @@
           "showLegend": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "single",
           "sort": "none"
         }
@@ -1303,6 +1310,7 @@
           "showLegend": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "multi",
           "sort": "none"
         }
@@ -1404,6 +1412,7 @@
           "showLegend": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "multi",
           "sort": "none"
         }
@@ -1505,6 +1514,7 @@
           "showLegend": true
         },
         "tooltip": {
+          "maxHeight": 600,
           "mode": "multi",
           "sort": "none"
         }
@@ -1534,8 +1544,8 @@
       {
         "current": {
           "selected": true,
-          "text": "node-1",
-          "value": "node-1"
+          "text": "node-2",
+          "value": "node-2"
         },
         "hide": 0,
         "includeAll": false,
@@ -1544,12 +1554,12 @@
         "name": "host",
         "options": [
           {
-            "selected": true,
+            "selected": false,
             "text": "node-1",
             "value": "node-1"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "node-2",
             "value": "node-2"
           }
@@ -1563,13 +1573,13 @@
         "current": {
           "selected": false,
           "text": "loki",
-          "value": "fdl2kjrq4euwwf"
+          "value": "cdm7as7iaups0a"
         },
         "hide": 0,
         "includeAll": false,
         "label": "Loki Data Source",
         "multi": false,
-        "name": "loki",
+        "name": "DS_LOKI",
         "options": [],
         "query": "loki",
         "queryValue": "",
@@ -1582,13 +1592,13 @@
         "current": {
           "selected": false,
           "text": "prometheus",
-          "value": "ddl2kd0r4h14wa"
+          "value": "fdm7as6qchmgwf"
         },
         "hide": 0,
         "includeAll": false,
         "label": "Prometheus DataSource",
         "multi": false,
-        "name": "prometheus",
+        "name": "DS_PROMETHEUS",
         "options": [],
         "query": "prometheus",
         "queryValue": "",
@@ -1603,6 +1613,7 @@
     "from": "now-5m",
     "to": "now"
   },
+  "timeRangeUpdatedDuringEditOrView": false,
   "timepicker": {
     "refresh_intervals": [
       "10s",
@@ -1619,6 +1630,6 @@
   "timezone": "",
   "title": "Nginx",
   "uid": "4DFTt9Wnk",
-  "version": 10,
+  "version": 3,
   "weekStart": ""
 }
