@@ -1,4 +1,41 @@
 {
+  "__inputs": [
+    {
+      "name": "DS_LOKI",
+      "label": "loki",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "loki",
+      "pluginName": "Loki"
+    }
+  ],
+  "__elements": {},
+  "__requires": [
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "11.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "logs",
+      "name": "Logs",
+      "version": ""
+    },
+    {
+      "type": "datasource",
+      "id": "loki",
+      "name": "Loki",
+      "version": "1.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "timeseries",
+      "name": "Time series",
+      "version": ""
+    }
+  ],
   "annotations": {
     "list": [
       {
@@ -18,13 +55,13 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 4,
+  "id": null,
   "links": [],
   "panels": [
     {
       "datasource": {
         "type": "loki",
-        "uid": "${data}"
+        "uid": "${DS_LOKI}"
       },
       "fieldConfig": {
         "defaults": {
@@ -104,7 +141,7 @@
         {
           "datasource": {
             "type": "loki",
-            "uid": "${data}"
+            "uid": "${DS_LOKI}"
           },
           "editorMode": "code",
           "expr": "count(count_over_time({instance=\"$host\"} | json | file=\"/var/log/auth.log\" |= \"session opened\" [1m]))",
@@ -118,7 +155,7 @@
     {
       "datasource": {
         "type": "loki",
-        "uid": "${data}"
+        "uid": "${DS_LOKI}"
       },
       "gridPos": {
         "h": 8,
@@ -141,7 +178,7 @@
         {
           "datasource": {
             "type": "loki",
-            "uid": "${data}"
+            "uid": "${DS_LOKI}"
           },
           "editorMode": "code",
           "expr": "{instance=\"$host\"} | json | file=\"/var/log/auth.log\"",
@@ -155,7 +192,7 @@
     {
       "datasource": {
         "type": "loki",
-        "uid": "${data}"
+        "uid": "${DS_LOKI}"
       },
       "gridPos": {
         "h": 8,
@@ -178,7 +215,7 @@
         {
           "datasource": {
             "type": "loki",
-            "uid": "${data}"
+            "uid": "${DS_LOKI}"
           },
           "editorMode": "code",
           "expr": "{instance=\"$host\"} | json | file=\"/var/log/dpkg.log\"",
@@ -192,7 +229,7 @@
     {
       "datasource": {
         "type": "loki",
-        "uid": "${data}"
+        "uid": "${DS_LOKI}"
       },
       "gridPos": {
         "h": 8,
@@ -215,7 +252,7 @@
         {
           "datasource": {
             "type": "loki",
-            "uid": "${data}"
+            "uid": "${DS_LOKI}"
           },
           "editorMode": "code",
           "expr": "{instance=\"$host\"} | json | file=\"/var/log/kern.log\"",
@@ -232,14 +269,10 @@
   "templating": {
     "list": [
       {
-        "current": {
-          "selected": true,
-          "text": "node-2",
-          "value": "node-2"
-        },
+        "current": {},
         "datasource": {
           "type": "loki",
-          "uid": "edlv3vkyv2uwwa"
+          "uid": "${DS_LOKI}"
         },
         "definition": "",
         "hide": 0,
@@ -264,13 +297,13 @@
         "current": {
           "selected": false,
           "text": "loki",
-          "value": "edlv3vkyv2uwwa"
+          "value": "cdm7as7iaups0a"
         },
         "hide": 0,
         "includeAll": false,
         "label": "Data Source",
         "multi": false,
-        "name": "data",
+        "name": "DS_LOKI",
         "options": [],
         "query": "loki",
         "refresh": 1,
@@ -289,6 +322,6 @@
   "timezone": "browser",
   "title": "System Logs",
   "uid": "edlvo6clx179cd",
-  "version": 7,
+  "version": 4,
   "weekStart": ""
 }
