@@ -105,8 +105,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -262,6 +261,43 @@
       ],
       "title": "Kernel Log",
       "type": "logs"
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "${DS_LOKI}"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 16
+      },
+      "id": 5,
+      "options": {
+        "dedupStrategy": "none",
+        "enableLogDetails": true,
+        "prettifyLogMessage": false,
+        "showCommonLabels": false,
+        "showLabels": false,
+        "showTime": false,
+        "sortOrder": "Descending",
+        "wrapLogMessage": false
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "${DS_LOKI}"
+          },
+          "editorMode": "code",
+          "expr": "{instance=\"node-1\"} | json | file=`/var/log/syslog` ",
+          "queryType": "range",
+          "refId": "A"
+        }
+      ],
+      "title": "syslog",
+      "type": "logs"
     }
   ],
   "schemaVersion": 39,
@@ -297,7 +333,7 @@
         "current": {
           "selected": false,
           "text": "loki",
-          "value": "cdm7as7iaups0a"
+          "value": "ddm7frwis1k3ke"
         },
         "hide": 0,
         "includeAll": false,
@@ -314,14 +350,14 @@
     ]
   },
   "time": {
-    "from": "now-3h",
-    "to": "now"
+    "from": "2024-05-19T14:54:03.995Z",
+    "to": "2024-05-19T20:54:03.997Z"
   },
-  "timeRangeUpdatedDuringEditOrView": false,
+  "timeRangeUpdatedDuringEditOrView": true,
   "timepicker": {},
   "timezone": "browser",
   "title": "System Logs",
   "uid": "edlvo6clx179cd",
-  "version": 4,
+  "version": 3,
   "weekStart": ""
 }
