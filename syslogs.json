@@ -105,7 +105,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -333,7 +334,7 @@
         "current": {
           "selected": false,
           "text": "loki",
-          "value": "ddm7frwis1k3ke"
+          "value": "edm95uyaxefpcf"
         },
         "hide": 0,
         "includeAll": false,
@@ -350,10 +351,10 @@
     ]
   },
   "time": {
-    "from": "2024-05-19T14:54:03.995Z",
-    "to": "2024-05-19T20:54:03.997Z"
+    "from": "now-3h",
+    "to": "now"
   },
-  "timeRangeUpdatedDuringEditOrView": true,
+  "timeRangeUpdatedDuringEditOrView": false,
   "timepicker": {},
   "timezone": "browser",
   "title": "System Logs",
